@@ -1,0 +1,4 @@
+en:
+  site_settings:
+    tvms_amp_enabled: 'Enable TVMS AMP'
+    tvms_amp_domain: 'Example: https://amp.thuvienmuasam.com'
