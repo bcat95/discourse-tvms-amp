@@ -1,0 +1,6 @@
+plugins:
+  tvms_amp_enabled:
+    default: true
+  tvms_amp_domain:
+    default: https://amp.thuvienmuasam.com
+    client: true
