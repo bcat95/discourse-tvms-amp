@@ -1,6 +1,14 @@
 plugins:
   tvms_amp_enabled:
-    default: true
+    default: false
   tvms_amp_domain:
     default: https://amp.thuvienmuasam.com
+    client: true
+  tvms_alternate_media_enabled:
+    default: true
+  tvms_alternate_media_size:
+    default: 640px
+    client: true
+  tvms_alternate_query:
+    default: ?html=1
     client: true
