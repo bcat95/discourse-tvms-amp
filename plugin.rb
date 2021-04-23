@@ -10,3 +10,4 @@ PLUGIN_NAME = "discourse-tvms-amp".freeze
 
 enabled_site_setting :tvms_amp_enabled
 enabled_site_setting :tvms_alternate_media_enabled
+enabled_site_setting :tvms_amp_tag_enabled
