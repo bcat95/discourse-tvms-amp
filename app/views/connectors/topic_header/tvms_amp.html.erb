@@ -2,9 +2,9 @@
 
 <% if (SiteSetting.tvms_amp_tag_enabled? and @topic_view.topic.tags.length > 0 and SiteSetting.tvms_amp_tag_name != "" ) %>
 
-<%= @topic_view.topic.tags.inspect %>
+<%= @topic_view.topic.tags[0].name %>
 
-<% if @topic_view.topic.tags[0] == SiteSetting.tvms_amp_tag_name %>
+<% if @topic_view.topic.tags[0].name == SiteSetting.tvms_amp_tag_name %>
 <% if SiteSetting.tvms_amp_domain != "" %>
 <link rel="amphtml" href="<%= SiteSetting.tvms_amp_domain %>/t/<%= @topic_view.topic.slug %>/<%= @topic_view.topic.id %>">
 <% else %>
