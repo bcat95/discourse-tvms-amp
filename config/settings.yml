@@ -12,3 +12,8 @@ plugins:
   tvms_alternate_query:
     default: ?html=1
     client: true
+  tvms_amp_tag_enabled:
+    default: true
+  tvms_amp_tag_name:
+    default: amp
+    client: true
