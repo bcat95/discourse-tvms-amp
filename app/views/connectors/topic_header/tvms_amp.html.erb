@@ -1,37 +1,40 @@
 <% if @topic_view %>
 
-<% if (SiteSetting.tvms_amp_tag_enabled? and @topic_view.topic.tags.length > 0 and SiteSetting.tvms_amp_tag_name != "" ) %>
+	<% if ( SiteSetting.tvms_amp_tag_enabled? and SiteSetting.tvms_amp_tag_name != "" ) %>
 
-<%= @topic_view.topic.tags[0].name %>
+		<% if @topic_view.topic.tags.length > 0 and @topic_view.topic.tags[0].name == SiteSetting.tvms_amp_tag_name %>
 
-<% if @topic_view.topic.tags[0].name == SiteSetting.tvms_amp_tag_name %>
-<% if SiteSetting.tvms_amp_domain != "" %>
-<link rel="amphtml" href="<%= SiteSetting.tvms_amp_domain %>/t/<%= @topic_view.topic.slug %>/<%= @topic_view.topic.id %>">
-<% else %>
-<link rel="amphtml" href="<%= @topic_view.topic.url.sub('https://', 'https://amp.') %>">
-<% end %>
-<% end %>
+			<%= @topic_view.topic.tags[0].name %>
 
-<% else %>
+			<% if SiteSetting.tvms_amp_domain != "" %>
+				<link rel="amphtml" href="<%= SiteSetting.tvms_amp_domain %>/t/<%= @topic_view.topic.slug %>/<%= @topic_view.topic.id %>">
+			<% else %>
+				<link rel="amphtml" href="<%= @topic_view.topic.url.sub('https://', 'https://amp.') %>">
+			<% end %>
 
-<% if SiteSetting.tvms_amp_enabled? %>
-<% if SiteSetting.tvms_amp_domain != "" %>
-<link rel="amphtml" href="<%= SiteSetting.tvms_amp_domain %>/t/<%= @topic_view.topic.slug %>/<%= @topic_view.topic.id %>">
-<% else %>
-<link rel="amphtml" href="<%= @topic_view.topic.url.sub('https://', 'https://amp.') %>">
-<% end %>
-<% end %>
+		<% else %>
 
-<% if SiteSetting.tvms_alternate_media_enabled? %>
-<% if (SiteSetting.tvms_alternate_media_size != "" and SiteSetting.tvms_alternate_query != "") %>
-<link rel="alternate" media="only screen and (max-width: <%= SiteSetting.tvms_alternate_media_size %>)" href="<%= @topic_view.topic.url %><%= SiteSetting.tvms_alternate_query %>" />
-<link rel="alternate" media="handheld" href="<%= @topic_view.topic.url %><%= SiteSetting.tvms_alternate_query %>" />
-<% else %>
-<link rel="alternate" media="only screen and (max-width: 640px)" href="<%= @topic_view.topic.url %>?html=1" />
-<link rel="alternate" media="handheld" href="<%= @topic_view.topic.url %>?html=1" />
-<% end %>
-<% end %>
+			<% if SiteSetting.tvms_amp_enabled? %>
+				<% if SiteSetting.tvms_amp_domain != "" %>
+					link rel="amphtml" href="<%= SiteSetting.tvms_amp_domain %>/t/<%= @topic_view.topic.slug %>/<%= @topic_view.topic.id %>">
+				<% else %>
+					<link rel="amphtml" href="<%= @topic_view.topic.url.sub('https://', 'https://amp.') %>">
+				<% end %>
+			<% end %>
 
-<% end %>
+			<% if SiteSetting.tvms_alternate_media_enabled? %>
+				<% if (SiteSetting.tvms_alternate_media_size != "" and SiteSetting.tvms_alternate_query != "") %>
+					<link rel="alternate" media="only screen and (max-width: <%= SiteSetting.tvms_alternate_media_size %>)" href="<%= @topic_view.topic.url %><%= SiteSetting.tvms_alternate_query %>" />
+					<link rel="alternate" media="handheld" href="<%= @topic_view.topic.url %><%= SiteSetting.tvms_alternate_query %>" />
+				<% else %>
+					<link rel="alternate" media="only screen and (max-width: 640px)" href="<%= @topic_view.topic.url %>?html=1" />
+					<link rel="alternate" media="handheld" href="<%= @topic_view.topic.url %>?html=1" />
+					<% end %>
+				<% end %>
+			<% end %>
+
+		<% end %>
+
+	<% end %>
 
 <% end %>
