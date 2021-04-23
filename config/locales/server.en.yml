@@ -5,3 +5,5 @@ en:
     tvms_alternate_media_enabled: 'Enable TVMS alternate media'
     tvms_alternate_media_size: 'Media size default: 640px'
     tvms_alternate_query: 'Url query parameters default: ?html=1'
+    tvms_amp_tag_enabled: 'Enable TVMS AMP Tag'
+    tvms_amp_tag_name: 'Tag name for AMP default: amp'
