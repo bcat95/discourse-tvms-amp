@@ -1,5 +1,9 @@
 <% if @topic_view %>
 
+<%= @topic_view.topic.inspect %>
+<%= @topic_view.topic.tags.inspect %>
+<%= @topic_view.topic.tags[0].inspect %>
+
 <% if ( SiteSetting.tvms_amp_tag_enabled? and @topic_view.topic.tags.length > 0 and SiteSetting.tvms_amp_tag_name != "" ) %>
 
 <% if @topic_view.topic.tags.include? SiteSetting.tvms_amp_tag_name %>
