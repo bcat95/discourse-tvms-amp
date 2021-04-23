@@ -2,3 +2,6 @@ en:
   site_settings:
     tvms_amp_enabled: 'Enable TVMS AMP'
     tvms_amp_domain: 'Example: https://amp.thuvienmuasam.com'
+    tvms_alternate_media_enabled: 'Enable TVMS alternate media'
+    tvms_alternate_media_size: 'Media size example: 640px'
+    tvms_alternate_query: '?html=1'
