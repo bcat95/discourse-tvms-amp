@@ -1,16 +1,11 @@
 <% if @topic_view %>
 
-<%= @topic_view.topic.title %>
-<%= @topic_view.topic.tags[0]["name"] %>
+<% if ( SiteSetting.tvms_amp_tag_enabled? and @topic_view.topic.tags.length > 0 and SiteSetting.tvms_amp_tag_name != "" and @topic_view.topic.tags[0]["name"] == SiteSetting.tvms_amp_tag_name ) %>
 
-<% if ( SiteSetting.tvms_amp_tag_enabled? and @topic_view.topic.tags.length > 0 and SiteSetting.tvms_amp_tag_name != "" ) %>
-
-<% if @topic_view.topic.tags.include? SiteSetting.tvms_amp_tag_name %>
 <% if SiteSetting.tvms_amp_domain != "" %>
 <link rel="amphtml" href="<%= SiteSetting.tvms_amp_domain %>/t/<%= @topic_view.topic.slug %>/<%= @topic_view.topic.id %>">
 <% else %>
 <link rel="amphtml" href="<%= @topic_view.topic.url.sub('https://', 'https://amp.') %>">
-<% end %>
 <% end %>
 
 <% else %>
