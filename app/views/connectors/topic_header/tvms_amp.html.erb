@@ -10,11 +10,11 @@
 
 <% if SiteSetting.tvms_alternate_media_enabled? %>
 <% if (SiteSetting.tvms_alternate_media_size != "" and SiteSetting.tvms_alternate_query != "") %>
-<link rel="alternate" media="only screen and (max-width: <%= SiteSetting.tvms_alternate_media_size %>)" href = "<%= @topic_view.topic.url %><%= SiteSetting.tvms_alternate_query %>" />
-<link rel="alternate" media="handheld" href = "<%= @topic_view.topic.url %><%= SiteSetting.tvms_alternate_query %>" />
+<link rel="alternate" media="only screen and (max-width: <%= SiteSetting.tvms_alternate_media_size %>)" href="<%= @topic_view.topic.url %><%= SiteSetting.tvms_alternate_query %>" />
+<link rel="alternate" media="handheld" href="<%= @topic_view.topic.url %><%= SiteSetting.tvms_alternate_query %>" />
 <% else %>
-<link rel="alternate" media="only screen and (max-width: 640px)" href = "<%= @topic_view.topic.url %>?html=1" />
-<link rel="alternate" media="handheld" href = "<%= @topic_view.topic.url %>?html=1" />
+<link rel="alternate" media="only screen and (max-width: 640px)" href="<%= @topic_view.topic.url %>?html=1" />
+<link rel="alternate" media="handheld" href="<%= @topic_view.topic.url %>?html=1" />
 <% end %>
 <% end %>
 
