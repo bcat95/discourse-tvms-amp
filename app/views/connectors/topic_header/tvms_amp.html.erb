@@ -1,5 +1,5 @@
 <% if @topic_view %>
-	<% if (SiteSetting.tvms_amp_tag_enabled? and @topic_view.topic.tags.length > 0 and SiteSetting.tvms_amp_tag_name != "" and @topic_view.topic.tags[0]["name"] == SiteSetting.tvms_amp_tag_name) %>
+	<% if (SiteSetting.tvms_amp_tag_enabled? and @topic_view.topic.tags.length > 0 and SiteSetting.tvms_amp_tag_name != "" and (@topic_view.topic.tags[0]["name"] == SiteSetting.tvms_amp_tag_name or (@topic_view.topic.tags.length > 1 and @topic_view.topic.tags[1]["name"] == SiteSetting.tvms_amp_tag_name))) %>
 		<% if SiteSetting.tvms_amp_domain != "" %>
 			<link rel="amphtml" href="<%= SiteSetting.tvms_amp_domain %>/t/<%= @topic_view.topic.slug %>/<%= @topic_view.topic.id %>">
 		<% else %>
